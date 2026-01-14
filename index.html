@@ -76,53 +76,103 @@
       transition: opacity 1s ease, transform 1s ease;
     }
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(20, 20, 20, 0.85);
-      backdrop-filter: blur(6px);
-      padding: 15px 20px;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /* =========================
+   NAVBAR ONLY (Gilbran Style)
+   ========================= */
 
-    nav ul {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
+/* Navbar Container */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  z-index: 1000;
 
-    nav ul li a {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 25px;
-      border: 1px solid transparent;
-      transition: 0.3s;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    nav ul li a:hover {
-      background: #ff4d4d;
-      color: #fff;
-      border-color: #ff4d4d;
-      box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
-    }
+/* Menu List */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
 
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-      position: absolute;
-      left: 20px;
-    }
+/* Menu Link */
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  background: #ff4d4d;
+  color: #fff;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+}
+
+/* Hamburger Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+
+  position: absolute;
+  left: 20px;
+}
+
+/* =========================
+   RESPONSIVE (Mobile Navbar)
+   ========================= */
+@media (max-width: 992px) {
+
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+    z-index: 2000;
+  }
+
+  /* Align navbar to the right (hamburger on left absolute) */
+  nav {
+    justify-content: flex-end;
+  }
+
+  /* Hide menu by default */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+
+    background: rgba(20, 20, 20, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  /* Show menu when toggled */
+  nav ul.show {
+    display: flex !important;
+  }
+}
+
 
     /* Section */
     section {
@@ -242,58 +292,6 @@
       75% { transform: rotate(-3deg); }
       100% { transform: rotate(0deg); }
     }
-
-    .cv-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #ff4d4d;
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
-    }
-
-    .cv-btn:hover {
-      background: #ff1a1a;
-      box-shadow: 0 0 25px rgba(255, 26, 26, 0.9);
-      transform: translateY(-3px);
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .menu-toggle {
-        display: block;
-        font-size: 28px;
-        cursor: pointer;
-        color: white;
-        position: absolute;
-        left: 20px;
-        z-index: 2000;
-      }
-
-      nav {
-        justify-content: flex-end;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        background: rgba(20, 20, 20, 0.95);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-      }
-
-      nav ul.show {
-        display: flex !important;
-      }
 
       .container {
         grid-template-columns: 1fr;
@@ -463,5 +461,6 @@
 
 </body>
 </html>
+
 
 
