@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontak - Gilbran</title>
 
   <!-- Font Awesome buat ikon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -33,15 +34,14 @@
     /* Background effect */
     #particles-js {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      inset: 0;
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Navbar */
+    /* =========================
+       NAVBAR
+       ========================= */
     nav {
       position: fixed;
       top: 0;
@@ -49,17 +49,21 @@
       width: 100%;
       background: rgba(20, 20, 20, 0.85);
       backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       padding: 15px 20px;
       z-index: 1000;
+
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     nav ul {
       display: flex;
       gap: 20px;
       list-style: none;
     }
+
     nav ul li a {
       display: inline-block;
       text-decoration: none;
@@ -70,6 +74,7 @@
       border: 1px solid transparent;
       transition: 0.3s;
     }
+
     nav ul li a:hover {
       background: #ff4d4d;
       color: #fff;
@@ -77,7 +82,27 @@
       box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
     }
 
-    /* Kontak Section */
+    /* Hamburger Toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      position: absolute;
+      left: 20px;
+      user-select: none;
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* =========================
+       CONTACT SECTION
+       ========================= */
     .contact-section {
       padding: 120px 10% 60px;
       min-height: 100vh;
@@ -85,6 +110,7 @@
       position: relative;
       z-index: 2;
     }
+
     .title {
       font-size: 2.5rem;
       margin-bottom: 40px;
@@ -100,6 +126,7 @@
       margin-bottom: 50px;
       flex-wrap: wrap;
     }
+
     .social-links a {
       font-size: 2rem;
       color: white;
@@ -115,6 +142,7 @@
       align-items: center;
       text-decoration: none;
     }
+
     .social-links a:hover {
       background: #ff4d4d;
       color: #fff;
@@ -132,13 +160,16 @@
       box-shadow: 0 0 20px rgba(255, 77, 77, 0.2);
       text-align: left;
     }
+
     form label {
       display: block;
       margin-bottom: 5px;
       color: #ff8080;
       font-weight: 600;
     }
-    form input, form textarea {
+
+    form input,
+    form textarea {
       width: 100%;
       padding: 12px;
       margin-bottom: 15px;
@@ -148,9 +179,12 @@
       color: white;
       font-size: 1rem;
     }
-    form input:focus, form textarea:focus {
+
+    form input:focus,
+    form textarea:focus {
       outline: 2px solid #ff4d4d;
     }
+
     form button {
       display: block;
       width: 100%;
@@ -163,21 +197,52 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     form button:hover {
       background: #ff4d4d;
       color: white;
       box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
     }
+
+    /* =========================
+       RESPONSIVE NAVBAR
+       ========================= */
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: block;
+        z-index: 2000;
+      }
+
+      nav {
+        justify-content: flex-end;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(20, 20, 20, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      nav ul.show {
+        display: flex !important;
+      }
+    }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Particles Background -->
   <div id="particles-js"></div>
 
   <!-- Navbar -->
   <nav>
-    <div class="menu-toggle">&#9776;</div>
+    <div class="menu-toggle" aria-label="Menu">&#9776;</div>
     <ul>
       <li><a href="index.html">Tentang Saya</a></li>
       <li><a href="skills.html">Skills</a></li>
@@ -204,12 +269,10 @@
         <i class="fas fa-envelope"></i>
       </a>
 
-      <!-- GitHub (NEW) -->
       <a href="https://github.com/MikamiBrian" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
 
-      <!-- LinkedIn (NEW) -->
       <a href="https://www.linkedin.com/in/gilbran-fahmi-almufaky/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
@@ -218,10 +281,10 @@
     <!-- Email Form -->
     <form action="mailto:gilbranfahmi.jp@gmail.com" method="POST" enctype="text/plain">
       <label for="name">Nama</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="message">Pesan</label>
       <textarea id="message" name="message" rows="5" required></textarea>
@@ -242,6 +305,15 @@
     });
   </script>
 
+  <!-- Navbar Toggle JS -->
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+
 </body>
 </html>
-
