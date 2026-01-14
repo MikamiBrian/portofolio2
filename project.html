@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project - Gilbran</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #1a1a1a, #2b2b2b, #3d0c0c, #660000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 15px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    nav ul li a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      border: 1px solid transparent;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      background: #ff4d4d;
+      color: #fff;
+      border-color: #ff4d4d;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin: 100px 0 30px 10%;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: transparent;
+      border: 2px solid #ff4d4d;
+      color: #ff4d4d;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #ff4d4d;
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Section */
+    .projects-section {
+      padding: 20px 10% 60px;
+      min-height: 100vh;
+    }
+    .title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #ff4d4d;
+      text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Project Cards */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.4);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .project-card h3 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    /* Background effect */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Tentang Saya</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="pengalaman.html" style="color:#ff4d4d;">Pengalaman</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Back Button -->
+  <a href="pengalaman.html" class="back-btn">← Kembali ke Pengalaman</a>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <h1 class="title">Projek Saya</h1>
+
+    <div class="projects-container">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="Screenshot 2025-03-06 173057.png" alt="Game Sederhana">
+        <h3>Game Sederhana</h3>
+        <p>Membuat game sederhana menggunakan Construct 2 sebagai bagian dari pembelajaran dasar pembuatan game.</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="Screenshot 2025-03-06 173334.png" alt="Miniatur Gate Tol">
+        <h3>Miniatur Gate Tol</h3>
+        <p>Membuat miniatur gate tol berbasis Arduino & IoT, sebagai simulasi sistem pintu tol otomatis.</p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="Screenshot 2025-03-06 164935.png" alt="Uni-Media">
+        <h3>Uni-Media</h3>
+        <p>Bergabung dalam proyek Uni-Media di tim Frontend Developer, bertanggung jawab pada tampilan Website.</p>
+      </div>
+
+
+      <!-- Project Contoh + LINK -->
+<div class="project-card">
+  <img src="Screenshot 2025-09-03 141159.png" alt="Portfolio Website">
+  <h3>A.C.A.B Website</h3>
+  <p>Membuat website bernama A.C.A.B yang berisi informasi terkait demo 28 Agustus – 2 September 2025. Dibangun dengan HTML, Bootstrap, CSS, dan Laravel (PHP).</p>
+
+  <div class="project-links">
+    <a class="btn-web"
+       href="https://mikamibrian.github.io/A.C.A.B/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Lihat Website
+    </a>
+  </div>
+</div>
+
+<div class="project-card">
+  <img src="Screenshot 2026-01-14 111719.png" alt="Portfolio Website">
+  <h3>Instagram Unfollow Checker</h3>
+  <p>Sebuah Website yang digunakan untuk melihat siapa yang tidak follback atau unfollow akun Instagram kita.</p>
+
+  <div class="project-links">
+    <a class="btn-web"
+       href="https://instagram-unfollow-checker.vercel.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Lihat Website
+    </a>
+  </div>
+</div>
+
+
+      <!-- Project 5 (NEW) -->
+      <div class="project-card">
+        <img src="Screenshot 2026-01-14 103245.png" alt="AI Chatbot App">
+        <h3>Piscash</h3>
+        <p>Membuat aplikasi POS (Point Of Sale) berbasis website yang digunakan oleh kasir sebuah toko aksesoris.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        move: { speed: 2 }
+      }
+    });
+  </script>
+
+</body>
+</html>

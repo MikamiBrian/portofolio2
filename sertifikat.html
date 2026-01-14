@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sertifikat - Gilbran</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #1a1a1a, #2b2b2b, #3d0c0c, #660000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 15px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    nav ul li a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      border: 1px solid transparent;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      background: #ff4d4d;
+      color: #fff;
+      border-color: #ff4d4d;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin: 100px 0 30px 10%;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: transparent;
+      border: 2px solid #ff4d4d;
+      color: #ff4d4d;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #ff4d4d;
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Section */
+    .certificates-section {
+      padding: 20px 10% 60px;
+      min-height: 100vh;
+    }
+    .title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #ff4d4d;
+      text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    }
+
+    /* Certificate Cards */
+    .certificates-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .certificate-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .certificate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.4);
+    }
+    .certificate-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .certificate-card h3 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+    .certificate-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Tentang Saya</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="pengalaman.html" style="color:#ff4d4d;">Pengalaman</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Back Button -->
+  <a href="pengalaman.html" class="back-btn">← Kembali ke Pengalaman</a>
+
+  <!-- Certificates Section -->
+  <section class="certificates-section">
+    <h1 class="title">Sertifikat Saya</h1>
+    <div class="certificates-container">
+
+      <!-- Sertifikat 1 -->
+      <div class="certificate-card">
+        <img src="IMG_20250304_192336.jpg" alt="Sertifikat 1">
+      </div>
+
+      <!-- Sertifikat 2 -->
+      <div class="certificate-card">
+        <img src="IMG_20250304_192238.jpg" alt="Sertifikat 2">
+      
+      </div>
+
+      <!-- Sertifikat 3 -->
+      <div class="certificate-card">
+        <img src="certificate-1756998553037.jpg" alt="Sertifikat 3">
+   
+      </div>
+
+      <!-- Sertifikat 4 -->
+      <div class="certificate-card">
+        <img src="certificate-1756998538797.jpg" alt="Sertifikat 4">
+    
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
